@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/souvick88/node-websocket/issues"
   },
-  "homepage": "https://github.com/souvick88/node-websocket#readme"
+  "homepage": "https://github.com/souvick88/node-websocket#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  }
 }
