@@ -89,8 +89,14 @@
         var $chat = $('#chatWindow');
 
         $messageForm.submit(function (e) {
-          e.preventionDefault();
-          console.log(submit);
+          e.preventDefault();
+          socket.emit('send message', $message.val());
+          $message.val('');
+          //   console.log('submitted');
+        });
+
+        socket.on('new message', function (data) {
+          $chat.append(data.msg + '<br>');
         });
       });
     </script>
