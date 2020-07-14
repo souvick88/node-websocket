@@ -124,7 +124,9 @@
         });
 
         socket.on('new message', function (data) {
-          $chat.append(data.msg + '<br>');
+          $chat.append(
+            '<strong>' + data.user + '</strong>: ' + data.msg + '<br>'
+          );
         });
       });
     </script>
