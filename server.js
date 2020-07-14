@@ -17,7 +17,7 @@ io.sockets.on('connection', function (socket) {
 
   socket.on('new user', function (data, callback) {
     if (usernames.indexOf(data) != -1) {
-      calbback(false);
+      callback(false);
     } else {
       callback(true);
       socket.username = data;
@@ -28,7 +28,7 @@ io.sockets.on('connection', function (socket) {
 
   //update usernames
   function updateUsernames() {
-    io.sockets.emit('username', username);
+    io.sockets.emit('usernames', usernames);
   }
 
   //Send Message
